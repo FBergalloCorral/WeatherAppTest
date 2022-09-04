@@ -1,14 +1,10 @@
 import './App.css';
-import CitySelector from './Components/citySelector'
-import DailyForecast from './Components/dailyForecast';
-import WeeklyForecast from './Components/weeklyForecast';
+import TemperaturePage from './Components/temperaturePage';
 
 function App() {
   return (
     <div className="App">
-      <CitySelector/>
-      <WeeklyForecast/>
-      <DailyForecast/>
+      <TemperaturePage />
     </div>
   );
 }

@@ -2,15 +2,17 @@
 import React from 'react';
 import TemperatureListing from './temperatureListing';
 class DailyForecast extends React.Component {
-    render() {
-        var x = 10
-        var tempList = []//replace with props later
-        for (var i = 0; i < 24; i++) {
-            tempList.push({ hour: i, temp: 25 + Math.round((Math.random() * x) - (x / 2)) });
+    constructor(props){
+        super(props);
+        //this.state = { tempHourly : this.props.tempHourly };
         }
-        const forecastList = tempList.map((prop) => <TemperatureListing hour={prop.hour} temperature={prop.temp} />)
+    render() {
+        console.log(this.props.tempHourly);// use refs to push it up to the weekly bit, that way the state can be altered more easily at the push of a button
+        console.log("in daily render");
+        this.forecastList= (this.props.tempHourly.map((prop) => <TemperatureListing hour={prop.hour} temperature={prop.temp} />))
         return (
             <table>
+                <tbody>
                 <tr>
                     <td>
                         Hour
@@ -19,7 +21,8 @@ class DailyForecast extends React.Component {
                         ºC
                     </td>
                 </tr>
-                {forecastList}
+                {this.forecastList}
+                </tbody>
             </table>
         )
     }
