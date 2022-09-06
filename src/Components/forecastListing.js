@@ -11,7 +11,7 @@ class ForecastListing extends React.Component {
         return (
             <tr>
                 <td>
-                    <button onClick={() => { this.setDaySelected(this.props.day.getDay()) }}>
+                    <button onClick={() => { this.setDaySelected(this.props.day.getDate()) }}>
                         {daysOfTheWeek[this.props.day.getDay()]}
                     </button>
                 </td>
